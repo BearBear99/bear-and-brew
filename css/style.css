@@ -1,1 +1,185 @@
-/* Styles — empty, no code yet */
+:root {
+  --red: #A9170B;
+  --cream: #FFFDF2;
+  --ink: #30261C;
+  --card: #F7F1E8;
+  --white: #fff;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: "Poppins", sans-serif;
+}
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 78px;
+  padding: 0 7vw;
+  background: var(--cream);
+}
+.logo { width: 58px; height: 48px; object-fit: contain; }
+.nav { display: flex; gap: 42px; font-size: 14px; letter-spacing: 0.12em; }
+.nav a { position: relative; }
+.nav a.active::after,
+.nav a:hover::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: -8px;
+  height: 2px;
+  background: var(--red);
+}
+
+.hero {
+  position: relative;
+  height: 520px;
+  background: #6b3a28 center / cover no-repeat;
+  overflow: hidden;
+}
+.hero-arch {
+  position: absolute;
+  left: 50%;
+  bottom: -1px;
+  transform: translateX(-50%);
+  width: 78%;
+  height: 78%;
+  background: var(--red);
+  border-radius: 50% 50% 0 0 / 42% 42% 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--cream);
+  text-align: center;
+}
+.hero-mark { width: 150px; margin-bottom: 8px; }
+.hero-arch h1 {
+  margin: 0;
+  font-family: "Playfair Display", serif;
+  font-size: 42px;
+  font-weight: 700;
+}
+
+.offer { padding: 64px 8vw 40px; text-align: center; }
+.offer h2 {
+  margin: 0 0 12px;
+  font-family: "Playfair Display", serif;
+  font-size: 48px;
+  font-weight: 700;
+}
+.offer p { max-width: 620px; margin: 0 auto 36px; color: #6d5d52; }
+.offer-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 22px;
+  max-width: 980px;
+  margin: 0 auto 28px;
+}
+.offer-grid figure { margin: 0; }
+.offer-grid img {
+  width: 128px;
+  height: 128px;
+  margin: 0 auto 10px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.offer-grid figcaption { font-size: 14px; }
+.menu-link { color: var(--red); font-weight: 600; letter-spacing: 0.04em; }
+
+.beans-banner {
+  width: min(1100px, 88vw);
+  margin: 28px auto 10px;
+  border-radius: 18px;
+}
+.section-title {
+  margin: 48px 0 24px;
+  text-align: center;
+  letter-spacing: 0.08em;
+  font-size: 28px;
+}
+.reviews {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  width: min(1100px, 88vw);
+  margin: 0 auto;
+}
+.review {
+  background: var(--card);
+  border-radius: 16px;
+  padding: 18px;
+}
+.review-top { display: flex; align-items: center; gap: 12px; }
+.review img { width: 52px; height: 52px; border-radius: 50%; object-fit: cover; }
+.review h3 { margin: 0; font-size: 16px; }
+.stars { margin-left: auto; color: #E0A106; letter-spacing: 2px; }
+.review p { font-size: 13px; line-height: 1.5; color: #4d4038; }
+.dots { text-align: center; margin: 16px 0 8px; color: var(--red); letter-spacing: 6px; }
+
+.feedback {
+  width: min(1100px, 88vw);
+  margin: 36px auto;
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 28px;
+  background: #1c120f;
+  color: white;
+  border-radius: 28px;
+  padding: 28px;
+}
+.feedback img { height: 220px; width: 100%; object-fit: cover; border-radius: 18px; }
+.feedback h2 { margin: 8px 0 16px; font-family: "Playfair Display", serif; }
+.feedback input, .feedback textarea {
+  width: 100%;
+  border: 0;
+  border-radius: 12px;
+  padding: 12px;
+  font: inherit;
+}
+.feedback textarea { min-height: 90px; resize: vertical; }
+.feedback button {
+  margin-top: 12px;
+  border: 0;
+  background: white;
+  color: var(--ink);
+  border-radius: 20px;
+  padding: 10px 22px;
+  font: inherit;
+  cursor: pointer;
+}
+
+.site-footer {
+  background: var(--red);
+  color: white;
+  padding: 36px 7vw 18px;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 160px 1.2fr 0.8fr 1.4fr;
+  gap: 24px;
+  align-items: start;
+}
+.footer-logo { width: 92px; }
+.site-footer h3 { margin: 0 0 10px; letter-spacing: 0.08em; font-size: 16px; }
+.site-footer p, .site-footer li { margin: 6px 0; font-size: 14px; }
+.site-footer ul { list-style: none; padding: 0; margin: 0; }
+.site-footer img.map { width: 100%; height: 150px; object-fit: cover; border-radius: 8px; }
+.fine { margin-top: 22px; font-size: 12px; opacity: 0.85; }
+
+@media (max-width: 900px) {
+  .nav { gap: 16px; font-size: 12px; }
+  .hero { height: 420px; }
+  .hero-arch { width: 92%; height: 70%; }
+  .offer-grid { grid-template-columns: repeat(3, 1fr); }
+  .reviews, .feedback, .footer-grid { grid-template-columns: 1fr; }
+}
