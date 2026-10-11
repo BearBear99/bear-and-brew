@@ -1,2 +1,5 @@
-# bear-and-brew
-U3292103 Bear &amp; Brew — coffee shop website and online store (unit 11840)
+# Bear & Brew
+
+U3292103 — unit 11840 coffee shop website and online store.
+
+File structure only. No page code yet.
