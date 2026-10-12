@@ -76,7 +76,13 @@ button, input, textarea, select { font: inherit; }
   border-radius: 50%; object-fit: cover; box-shadow: var(--shadow);
 }
 .offer-grid figcaption { font-size: 14px; }
-.menu-link { color: var(--red); font-weight: 600; letter-spacing: 0.04em; }
+.menu-link {
+  color: var(--red);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
 
 .beans-banner {
   display: block; width: min(1100px, 90vw); margin: 28px auto 8px; border-radius: 18px;
@@ -84,7 +90,32 @@ button, input, textarea, select { font: inherit; }
 .section-title {
   margin: 48px 0 22px; text-align: center; letter-spacing: 0.1em; font-size: 24px;
 }
-.reviews { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.reviews { display: none; }
+.carousel {
+  position: relative;
+  height: 280px;
+  width: min(1120px, 94vw);
+  margin: 0 auto;
+  overflow: hidden;
+}
+.carousel .review {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: min(360px, 42vw);
+  transform: translate(-50%, -50%) scale(0.72);
+  opacity: 0.45;
+  transition: transform 0.45s ease, opacity 0.45s ease;
+  pointer-events: none;
+}
+.carousel .review.active {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+  z-index: 2;
+  pointer-events: auto;
+}
+.carousel .review.prev { transform: translate(calc(-50% - 340px), -50%) scale(0.72); }
+.carousel .review.next { transform: translate(calc(-50% + 340px), -50%) scale(0.72); }
 .review {
   background: #F7F1E8; border-radius: 16px; padding: 18px;
 }
@@ -93,11 +124,16 @@ button, input, textarea, select { font: inherit; }
 .review h3 { margin: 0; font-size: 16px; }
 .stars { margin-left: auto; color: #E0A106; letter-spacing: 1px; }
 .review p { font-size: 13px; line-height: 1.55; color: #4d4038; }
-.dots { text-align: center; margin: 14px 0; color: var(--red); letter-spacing: 6px; }
+.dots { text-align: center; margin: 14px 0; }
+.dots button {
+  width: 8px; height: 8px; border: 0; border-radius: 50%;
+  background: #E7C9C4; margin: 0 4px; cursor: pointer; padding: 0;
+}
+.dots button.on { background: var(--red); }
 
 .feedback {
   display: grid; grid-template-columns: 280px 1fr; gap: 28px;
-  margin: 36px auto; background: #1c120f; color: white;
+  margin: 36px auto; background: var(--red); color: white;
   border-radius: 28px; padding: 28px;
 }
 .feedback img { height: 220px; width: 100%; object-fit: cover; border-radius: 18px; }
