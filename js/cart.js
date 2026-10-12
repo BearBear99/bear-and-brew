@@ -157,26 +157,25 @@ updateBadge();
 renderProducts("all");
 renderCart();
 
+const track = document.querySelector("#reviews .carousel-track");
 const cards = [...document.querySelectorAll("#reviews .review")];
 const dots = document.getElementById("review-dots");
 let index = 0;
 function showReview(i) {
-  if (!cards.length) return;
+  if (!cards.length || !track) return;
   index = (i + cards.length) % cards.length;
-  cards.forEach((card, n) => {
-    card.classList.remove("active", "prev", "next");
-    if (n === index) card.classList.add("active");
-    else if (n === (index - 1 + cards.length) % cards.length) card.classList.add("prev");
-    else if (n === (index + 1) % cards.length) card.classList.add("next");
-  });
+  const card = cards[0];
+  const step = card.getBoundingClientRect().width + 18;
+  track.style.transform = `translateX(-${index * step}px)`;
   if (dots) [...dots.children].forEach((d, n) => d.classList.toggle("on", n === index));
 }
-if (cards.length && dots) {
+if (cards.length && dots && track) {
   dots.innerHTML = cards.map((_, n) => `<button aria-label="Review ${n + 1}"></button>`).join("");
   dots.addEventListener("click", (e) => {
     const i = [...dots.children].indexOf(e.target);
     if (i >= 0) showReview(i);
   });
   showReview(0);
-  setInterval(() => showReview(index + 1), 3500);
+  setInterval(() => showReview(index + 1), 6000);
+  window.addEventListener("resize", () => showReview(index));
 }
