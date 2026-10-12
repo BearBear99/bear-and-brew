@@ -9,65 +9,66 @@
 </head>
 <body>
   <header class="site-header">
-    <a href="index.html"><img class="logo" src="images/brand/logo-bear.jpg" alt="Bear & Brew"></a>
+    <a href="index.html"><img class="logo" src="images/brand/logo-bear.jpg" alt="Bear and Brew"></a>
     <nav class="nav">
       <a href="index.html">HOME</a>
       <a class="active" href="about.html">ABOUT</a>
       <a href="shop.html">SHOP</a>
-      <a href="index.html#cart">CART</a>
+      <a class="cart-link" href="#" data-open-cart>CART <span class="badge" hidden>0</span></a>
     </nav>
   </header>
 
-  <section class="offer">
-    <h2>Beans. Bear. Bag.</h2>
-    <p>A small Canberra cafe, opened in 2022. The bear is here so the place feels cute, quiet and comfortable.</p>
+  <section class="about-hero">
+    <h1>BEAR &<br>BREW</h1>
+    <img src="images/brand/cup-1.jpg" alt="Coffee cup">
   </section>
 
-  <section class="reviews">
-    <article class="review">
-      <h3>Beans</h3>
-      <p>Di Pacci beans, poured in the shop. We do not roast them. The cup you order is the bean you can take home.</p>
-    </article>
-    <article class="review">
-      <h3>Bear</h3>
-      <p>The bear is the feeling of the place. Cute, quiet and comfortable, from the logo to the cup.</p>
-    </article>
-    <article class="review">
-      <h3>Bag</h3>
-      <p>The bag is the shop you can carry out. Same bear, same red, made for takeaway.</p>
-    </article>
-  </section>
-
-  <section class="feedback" style="background:#A9170B">
-    <img src="images/offers/chocolate-milkshake.jpg" alt="Chocolate milkshake">
-    <div>
-      <h2>Something new each week.</h2>
-      <p>So there is always something different to try, we put one product on offer every week.</p>
-      <p><strong>Chocolate milkshake · $6.80</strong><br>was $8.50 · Medium, 20% off</p>
+  <section class="wrap center" style="padding-top:36px">
+    <h2 class="about-title">BEANS. BEAR. BAG.</h2>
+    <div class="bbb">
+      <article>
+        <img src="images/products/elements-250.webp" alt="Coffee beans">
+        <h3>Beans</h3>
+        <p>Di Pacci beans, poured in the shop. We do not roast them. The cup you drink is the same blend you can take home.</p>
+      </article>
+      <article>
+        <img src="images/brand/logo-full.jpg" alt="Bear logo">
+        <h3>Bear</h3>
+        <p>The bear is the feeling of the place. Cute, quiet and comfortable, from the logo on the door to the sleeve on the cup.</p>
+      </article>
+      <article>
+        <img src="images/brand/bag-cup.jpg" alt="Takeaway bag">
+        <h3>Bag</h3>
+        <p>The bag is the shop you can carry out. Same bear, same red, made for the beans and a still-warm pastry.</p>
+      </article>
     </div>
+    <section class="week">
+      <div>
+        <p class="kicker">EVERY WEEK</p>
+        <h2>Something new each week.</h2>
+        <p>So there is always something different to try, we put one product on offer every week. This week it is the chocolate milkshake, 20% off.</p>
+      </div>
+      <div class="center">
+        <img src="images/offers/chocolate-milkshake.jpg" alt="Chocolate milkshake">
+        <p><strong>Chocolate Milkshake</strong></p>
+        <p class="price">$6.80</p>
+        <p class="was">was $8.50</p>
+      </div>
+    </section>
   </section>
 
   <footer class="site-footer">
     <div class="footer-grid">
-      <img class="footer-logo" src="images/brand/logo-full.jpg" alt="Bear & Brew">
-      <div>
-        <h3>VISIT US</h3>
-        <p>Canberra cafe</p>
-        <p>Open 7:00–16:00 Mon – Sat</p>
-        <p>Brew&Brew@gmail.com</p>
-      </div>
-      <div>
-        <h3>INFORMATION</h3>
-        <ul>
-          <li><a href="index.html">HOME</a></li>
-          <li><a href="about.html">ABOUT</a></li>
-          <li><a href="shop.html">SHOP</a></li>
-          <li><a href="menu.html">MENU</a></li>
-        </ul>
-      </div>
+      <img class="footer-logo" src="images/brand/logo-full.jpg" alt="Bear and Brew">
+      <div><h3>VISIT US</h3><p>Canberra cafe</p><p>Open 7:00–16:00 Mon – Sat</p><p>Brew&Brew@gmail.com</p></div>
+      <div><h3>INFORMATION</h3><ul><li><a href="index.html">HOME</a></li><li><a href="about.html">ABOUT</a></li><li><a href="shop.html">SHOP</a></li><li><a href="menu.html">MENU</a></li></ul></div>
       <img class="map" src="images/footer/map.jpg" alt="Map">
     </div>
     <p class="fine">Bear & Brew · Demo store · No real payment</p>
   </footer>
+  <div class="drawer" hidden><div class="scrim" data-close-cart></div><aside class="panel"><h2>Cart</h2><div class="cart-list"></div><div class="totals">Subtotal <strong class="subtotal">$0.00</strong><br>Shipping <strong class="shipping">Free</strong><br>Total <strong class="total">$0.00</strong></div><p class="ship-note note" hidden>Spend $100 for free shipping.</p><button class="btn btn-red" data-checkout>Checkout</button></aside></div>
+  <div class="modal" hidden><div class="scrim" data-close-modal></div><div class="modal-card"><h2>Demo checkout</h2><p>No payment was taken. This is a student demo.</p><p>Order total: <strong class="order-total">$0.00</strong></p><button class="btn btn-red" data-confirm>Place demo order</button></div></div>
+  <div class="toast" hidden></div>
+  <script src="js/cart.js"></script>
 </body>
 </html>

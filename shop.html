@@ -9,28 +9,54 @@
 </head>
 <body>
   <header class="site-header">
-    <a href="index.html"><img class="logo" src="images/brand/logo-bear.jpg" alt="Bear & Brew"></a>
+    <a href="index.html"><img class="logo" src="images/brand/logo-bear.jpg" alt="Bear and Brew"></a>
     <nav class="nav">
       <a href="index.html">HOME</a>
       <a href="about.html">ABOUT</a>
       <a class="active" href="shop.html">SHOP</a>
-      <a href="#cart">CART</a>
+      <a class="cart-link" href="#" data-open-cart>CART <span class="badge" hidden>0</span></a>
     </nav>
   </header>
-  <section class="offer">
-    <h2>Shop</h2>
-    <p>Free shipping on orders over $100. Beans and drinking chocolate from Di Pacci.</p>
-    <div class="reviews">
-      <article class="review"><img src="images/products/elements-250.webp" alt=""><h3>Elements Blend 250g</h3><p>$14.21</p></article>
-      <article class="review"><img src="images/products/elements-500.webp" alt=""><h3>Elements Blend 500g</h3><p>$17.77</p></article>
-      <article class="review"><img src="images/products/elements-1kg.png" alt=""><h3>Elements Blend 1kg</h3><p>$28.46</p></article>
-      <article class="review"><img src="images/products/after-dark-250.webp" alt=""><h3>After Dark 250g</h3><p>$14.21</p></article>
-      <article class="review"><img src="images/products/by-the-bay-250.webp" alt=""><h3>By The Bay 250g</h3><p>$14.21</p></article>
-      <article class="review"><img src="images/products/drinking-chocolate.webp" alt=""><h3>Drinking Chocolate 1kg</h3><p>$11.36</p></article>
+
+  <section class="shop-hero">
+    <img src="images/products/shop-hero.jpg" alt="Coffee bag">
+    <div>
+      <h1>Fresh Coffee Beans, Roasted Daily</h1>
+      <p>Rich, smooth, and full-bodied. Freshly roasted every day to bring out the finest aroma and flavour in every cup.</p>
     </div>
   </section>
+
+  <section class="wrap shop-layout">
+    <aside>
+      <h3>Shop by category</h3>
+      <div class="cats">
+        <button class="active" data-cat="all">All products</button>
+        <button data-cat="beans">Coffee beans</button>
+        <button data-cat="chocolate">Drinking chocolate</button>
+      </div>
+    </aside>
+    <div>
+      <div class="shop-tools">
+        <span class="showing">Showing 9 products</span>
+        <span>Free shipping over $100</span>
+      </div>
+      <div class="products"></div>
+      <p class="credit">Beans by Di Pacci Coffee Co.</p>
+    </div>
+  </section>
+
   <footer class="site-footer">
+    <div class="footer-grid">
+      <img class="footer-logo" src="images/brand/logo-full.jpg" alt="Bear and Brew">
+      <div><h3>VISIT US</h3><p>Canberra cafe</p><p>Open 7:00–16:00 Mon – Sat</p><p>Brew&Brew@gmail.com</p></div>
+      <div><h3>INFORMATION</h3><ul><li><a href="index.html">HOME</a></li><li><a href="about.html">ABOUT</a></li><li><a href="shop.html">SHOP</a></li><li><a href="menu.html">MENU</a></li></ul></div>
+      <img class="map" src="images/footer/map.jpg" alt="Map">
+    </div>
     <p class="fine">Bear & Brew · Demo store · No real payment</p>
   </footer>
+  <div class="drawer" hidden><div class="scrim" data-close-cart></div><aside class="panel"><h2>Cart</h2><div class="cart-list"></div><div class="totals">Subtotal <strong class="subtotal">$0.00</strong><br>Shipping <strong class="shipping">Free</strong><br>Total <strong class="total">$0.00</strong></div><p class="ship-note note" hidden>Spend $100 for free shipping.</p><button class="btn btn-red" data-checkout>Checkout</button></aside></div>
+  <div class="modal" hidden><div class="scrim" data-close-modal></div><div class="modal-card"><h2>Demo checkout</h2><p>No payment was taken. This is a student demo.</p><p>Order total: <strong class="order-total">$0.00</strong></p><button class="btn btn-red" data-confirm>Place demo order</button></div></div>
+  <div class="toast" hidden></div>
+  <script src="js/cart.js"></script>
 </body>
 </html>
