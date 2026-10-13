@@ -25,7 +25,7 @@ button, input, textarea, select { font: inherit; }
   height: 78px; padding: 0 6vw;
   background: var(--red); color: var(--cream);
 }
-.logo { width: 56px; height: 48px; object-fit: contain; filter: brightness(0) invert(1); }
+.logo { width: 48px; height: 48px; object-fit: contain; filter: none; }
 .nav { display: flex; gap: 36px; align-items: center; font-size: 13px; letter-spacing: 0.14em; }
 .nav a { position: relative; padding-bottom: 6px; color: var(--cream); }
 .nav a.active::after, .nav a:hover::after {
@@ -49,7 +49,7 @@ button, input, textarea, select { font: inherit; }
   position: absolute; left: 50%; bottom: -8%;
   transform: translateX(-50%);
   width: 140%; height: 78%;
-  background: var(--red);
+  background: rgba(169, 23, 11, 0.75);
   border-radius: 50% 50% 0 0 / 100% 100% 0 0;
   display: flex; align-items: center; justify-content: center;
 }
@@ -90,8 +90,20 @@ button, input, textarea, select { font: inherit; }
 }
 
 .beans-banner {
-  display: block; width: min(1100px, 90vw); margin: 28px auto 8px; border-radius: 18px;
+  display: grid; grid-template-columns: 1.1fr 1.2fr 1.1fr;
+  align-items: end; gap: 12px;
+  width: min(1100px, 90vw); margin: 28px auto 8px;
+  background: var(--red); color: white;
+  border-radius: 28px; min-height: 240px; padding: 18px 28px 0;
+  overflow: hidden; text-decoration: none;
 }
+.banner-left { position: relative; height: 220px; }
+.banner-left img { height: 220px; width: auto; object-fit: contain; }
+.banner-cup { position: absolute; left: 120px; bottom: 8px; height: 110px !important; }
+.banner-copy { text-align: center; padding-bottom: 36px; }
+.banner-copy h2 { margin: 0 0 14px; font-family: "Playfair Display", serif; font-size: clamp(28px, 3vw, 40px); }
+.banner-copy span { display: inline-block; background: white; color: var(--ink); border-radius: 999px; padding: 8px 16px; font-size: 14px; }
+.banner-hand { height: 200px; width: auto; object-fit: contain; justify-self: end; }
 .section-title {
   margin: 48px 0 22px; text-align: center; letter-spacing: 0.1em; font-size: 24px;
 }
