@@ -60,7 +60,7 @@ button, input, textarea, select { font: inherit; }
   border-radius: 0 0 50% 50% / 0 0 80px 80px;
 }
 .offer-curve h2 { color: white; }
-.offer-curve p { color: white; opacity: 1; }
+.offer-curve p, .offer.offer-curve p { color: white !important; opacity: 1; }
 .offer-items { padding-top: 28px; }
 
 .wrap { width: min(1120px, 90vw); margin: 0 auto; }
