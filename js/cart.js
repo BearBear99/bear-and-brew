@@ -158,24 +158,36 @@ renderProducts("all");
 renderCart();
 
 const track = document.querySelector("#reviews .carousel-track");
-const cards = [...document.querySelectorAll("#reviews .review")];
+const originals = [...document.querySelectorAll("#reviews .review")];
 const dots = document.getElementById("review-dots");
 let index = 0;
-function showReview(i) {
-  if (!cards.length || !track) return;
-  index = (i + cards.length) % cards.length;
-  const card = cards[0];
-  const step = card.getBoundingClientRect().width + 18;
-  track.style.transform = `translateX(-${index * step}px)`;
-  if (dots) [...dots.children].forEach((d, n) => d.classList.toggle("on", n === index));
+let timer;
+function step() {
+  if (!originals.length || !track) return 0;
+  return originals[0].getBoundingClientRect().width + 18;
 }
-if (cards.length && dots && track) {
-  dots.innerHTML = cards.map((_, n) => `<button aria-label="Review ${n + 1}"></button>`).join("");
+function setDots() {
+  if (!dots) return;
+  [...dots.children].forEach((d, n) => d.classList.toggle("on", n === index % originals.length % 3));
+}
+function go(i, animate = true) {
+  if (!originals.length || !track) return;
+  index = i;
+  track.style.transition = animate ? "transform 0.7s ease" : "none";
+  track.style.transform = `translateX(-${index * step()}px)`;
+  setDots();
+  if (index >= originals.length) {
+    setTimeout(() => go(index - originals.length, false), 720);
+  }
+}
+if (originals.length && dots && track) {
+  originals.slice(0, 3).forEach((card) => track.appendChild(card.cloneNode(true)));
+  dots.innerHTML = `<button aria-label="Set 1"></button><button aria-label="Set 2"></button><button aria-label="Set 3"></button>`;
   dots.addEventListener("click", (e) => {
     const i = [...dots.children].indexOf(e.target);
-    if (i >= 0) showReview(i);
+    if (i >= 0) go(i);
   });
-  showReview(0);
-  setInterval(() => showReview(index + 1), 6000);
-  window.addEventListener("resize", () => showReview(index));
+  go(0, false);
+  timer = setInterval(() => go(index + 1), 6000);
+  window.addEventListener("resize", () => go(index, false));
 }
