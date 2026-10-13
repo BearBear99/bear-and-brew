@@ -110,7 +110,8 @@ button, input, textarea, select { font: inherit; }
   background-size: 28px 28px;
   opacity: 0.35; pointer-events: none;
 }
-.banner-left, .banner-right { height: 210px; width: 100%; object-fit: contain; z-index: 1; }
+.banner-left { height: 200px; width: 100%; object-fit: contain; object-position: left center; z-index: 1; }
+.banner-right { height: 230px; width: 100%; object-fit: cover; object-position: right bottom; z-index: 1; border-radius: 0 28px 28px 0; }
 .banner-copy { text-align: center; z-index: 1; }
 .banner-copy h2 { margin: 0 0 14px; font-family: "Playfair Display", serif; font-size: clamp(22px, 2.4vw, 30px); line-height: 1.15; font-weight: 700; }
 .banner-copy a { display: inline-block; background: white; color: var(--red); border-radius: 999px; padding: 8px 16px; font-size: 13px; font-weight: 600; }
