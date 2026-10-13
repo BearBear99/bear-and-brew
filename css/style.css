@@ -281,16 +281,3 @@ button, input, textarea, select { font: inherit; }
   width: 42px; height: 42px; border: 0; border-radius: 50%;
   background: white; color: var(--ink); font-size: 24px; cursor: pointer;
 }
-
-.lightbox {
-  position: fixed; inset: 0; z-index: 80;
-  background: rgba(20, 10, 8, 0.78);
-  display: none; align-items: center; justify-content: center;
-}
-.lightbox.open { display: flex; }
-.lightbox img { max-width: 90vw; max-height: 86vh; border-radius: 12px; }
-.lightbox button {
-  position: absolute; top: 18px; right: 22px;
-  width: 42px; height: 42px; border: 0; border-radius: 50%;
-  background: white; color: var(--ink); font-size: 24px; cursor: pointer;
-}
