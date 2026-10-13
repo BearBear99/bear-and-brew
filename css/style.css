@@ -23,14 +23,13 @@ button, input, textarea, select { font: inherit; }
   position: sticky; top: 0; z-index: 30;
   display: flex; align-items: center; justify-content: space-between;
   height: 78px; padding: 0 6vw;
-  background: rgba(255, 253, 242, 0.96);
-  backdrop-filter: blur(8px);
+  background: var(--red); color: var(--cream);
 }
-.logo { width: 56px; height: 48px; object-fit: contain; }
+.logo { width: 56px; height: 48px; object-fit: contain; filter: brightness(0) invert(1); }
 .nav { display: flex; gap: 36px; align-items: center; font-size: 13px; letter-spacing: 0.14em; }
-.nav a { position: relative; padding-bottom: 6px; }
+.nav a { position: relative; padding-bottom: 6px; color: var(--cream); }
 .nav a.active::after, .nav a:hover::after {
-  content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 2px; background: var(--red);
+  content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 2px; background: var(--cream);
 }
 .cart-link { position: relative; }
 .badge {
@@ -42,20 +41,26 @@ button, input, textarea, select { font: inherit; }
 .badge[hidden] { display: none; }
 
 .hero {
-  position: relative; height: 560px;
+  position: relative; height: 520px;
   background: #6b3a28 center / cover no-repeat;
   overflow: hidden;
 }
 .hero-arch {
-  position: absolute; left: 50%; bottom: -1px; transform: translateX(-50%);
-  width: min(980px, 78%); height: 78%;
+  position: absolute; left: 50%; bottom: -8%;
+  transform: translateX(-50%);
+  width: 140%; height: 78%;
   background: var(--red);
-  border-radius: 50% 50% 0 0 / 40% 40% 0 0;
-  display: flex; flex-direction: column; align-items: center; justify-content: center;
-  color: var(--cream); text-align: center;
+  border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+  display: flex; align-items: center; justify-content: center;
 }
-.hero-mark { width: 150px; margin-bottom: 6px; filter: brightness(0) invert(1); }
-.hero-arch h1 { margin: 0; font-family: "Playfair Display", serif; font-size: clamp(36px, 4vw, 52px); }
+.hero-mark { width: 220px; height: auto; background: transparent; filter: none; }
+.offer-curve {
+  background: var(--red); color: white;
+  margin-top: -1px; padding: 8px 0 70px;
+  border-radius: 0 0 50% 50% / 0 0 80px 80px;
+}
+.offer-curve h2, .offer-curve p { color: white; }
+.offer-items { padding-top: 28px; }
 
 .wrap { width: min(1120px, 90vw); margin: 0 auto; }
 .center { text-align: center; }
