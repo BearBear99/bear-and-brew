@@ -92,18 +92,23 @@ button, input, textarea, select { font: inherit; }
 .beans-banner {
   display: grid; grid-template-columns: 1.1fr 1.2fr 1.1fr;
   align-items: end; gap: 12px;
+  position: relative;
   width: min(1100px, 90vw); margin: 28px auto 8px;
   background: var(--red); color: white;
   border-radius: 28px; min-height: 240px; padding: 18px 28px 0;
-  overflow: hidden; text-decoration: none;
+  overflow: hidden;
 }
 .banner-left { position: relative; height: 220px; }
-.banner-left img { height: 220px; width: auto; object-fit: contain; }
-.banner-cup { position: absolute; left: 120px; bottom: 8px; height: 110px !important; }
+.banner-left img { height: 210px; width: auto; object-fit: contain; }
+.banner-cup { position: absolute; left: 130px; bottom: 10px; height: 120px !important; }
 .banner-copy { text-align: center; padding-bottom: 36px; }
 .banner-copy h2 { margin: 0 0 14px; font-family: "Playfair Display", serif; font-size: clamp(28px, 3vw, 40px); }
-.banner-copy span { display: inline-block; background: white; color: var(--ink); border-radius: 999px; padding: 8px 16px; font-size: 14px; }
-.banner-hand { height: 200px; width: auto; object-fit: contain; justify-self: end; }
+.banner-copy a { display: inline-block; background: white; color: var(--ink); border-radius: 999px; padding: 8px 16px; font-size: 14px; }
+.banner-hand {
+  position: absolute; right: 12px; top: 8px;
+  height: 220px; width: auto; object-fit: contain;
+  pointer-events: none;
+}
 .section-title {
   margin: 48px 0 22px; text-align: center; letter-spacing: 0.1em; font-size: 24px;
 }
