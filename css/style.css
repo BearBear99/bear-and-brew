@@ -59,7 +59,8 @@ button, input, textarea, select { font: inherit; }
   margin-top: -1px; padding: 8px 0 70px;
   border-radius: 0 0 50% 50% / 0 0 80px 80px;
 }
-.offer-curve h2, .offer-curve p { color: white; }
+.offer-curve h2 { color: white; }
+.offer-curve p { color: white; opacity: 1; }
 .offer-items { padding-top: 28px; }
 
 .wrap { width: min(1120px, 90vw); margin: 0 auto; }
@@ -90,24 +91,37 @@ button, input, textarea, select { font: inherit; }
 }
 
 .beans-banner {
-  display: grid; grid-template-columns: 1.1fr 1.2fr 1.1fr;
-  align-items: end; gap: 12px;
+  display: grid; grid-template-columns: 1.2fr 1fr 1.2fr;
+  align-items: center; gap: 8px;
   position: relative;
-  width: min(1100px, 90vw); margin: 28px auto 8px;
-  background: var(--red); color: white;
-  border-radius: 28px; min-height: 240px; padding: 18px 28px 0;
+  width: min(1100px, 92vw); margin: 36px auto 8px;
+  background:
+    radial-gradient(circle at 18% 70%, rgba(255,255,255,0.08) 0 18px, transparent 19px),
+    radial-gradient(circle at 78% 30%, rgba(255,255,255,0.07) 0 22px, transparent 23px),
+    radial-gradient(circle at 55% 80%, rgba(0,0,0,0.08) 0 14px, transparent 15px),
+    var(--red);
+  color: white;
+  border-radius: 28px; min-height: 250px; padding: 16px 24px 12px;
   overflow: hidden;
 }
-.banner-left { position: relative; height: 220px; }
-.banner-left img { height: 210px; width: auto; object-fit: contain; }
-.banner-cup { position: absolute; left: 130px; bottom: 10px; height: 120px !important; }
-.banner-copy { text-align: center; padding-bottom: 36px; }
-.banner-copy h2 { margin: 0 0 14px; font-family: "Playfair Display", serif; font-size: clamp(28px, 3vw, 40px); }
-.banner-copy a { display: inline-block; background: white; color: var(--ink); border-radius: 999px; padding: 8px 16px; font-size: 14px; }
+.beans-banner::before {
+  content: "";
+  position: absolute; inset: 0;
+  background-image:
+    radial-gradient(circle, rgba(255,255,255,0.16) 1.2px, transparent 1.4px);
+  background-size: 28px 28px;
+  opacity: 0.35; pointer-events: none;
+}
+.banner-left { position: relative; height: 230px; z-index: 1; }
+.banner-left img { height: 220px; width: auto; object-fit: contain; }
+.banner-cup { position: absolute; left: 145px; bottom: 8px; height: 118px !important; }
+.banner-copy { text-align: center; z-index: 1; }
+.banner-copy h2 { margin: 0 0 16px; font-family: "Playfair Display", serif; font-size: clamp(30px, 3.2vw, 42px); line-height: 1.1; }
+.banner-copy a { display: inline-block; background: white; color: var(--red); border-radius: 999px; padding: 10px 20px; font-size: 14px; font-weight: 600; }
 .banner-hand {
-  position: absolute; right: 12px; top: 8px;
-  height: 220px; width: auto; object-fit: contain;
-  pointer-events: none;
+  position: absolute; right: -6px; bottom: -8px;
+  height: 240px; width: auto; object-fit: contain;
+  pointer-events: none; z-index: 1;
 }
 .section-title {
   margin: 48px 0 22px; text-align: center; letter-spacing: 0.1em; font-size: 24px;
