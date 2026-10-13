@@ -173,8 +173,8 @@ button, input, textarea, select { font: inherit; }
 }
 .feedback textarea { min-height: 90px; resize: vertical; }
 .feedback button, .btn {
-  border: 0; background: white; color: var(--ink);
-  border-radius: 20px; padding: 10px 22px; cursor: pointer;
+  border: 0; background: white; color: var(--red);
+  border-radius: 20px; padding: 10px 22px; cursor: pointer; font-weight: 600;
 }
 .btn-red { background: var(--red); color: white; }
 .btn:active { transform: scale(0.98); }
