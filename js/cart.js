@@ -195,7 +195,7 @@ if (originals.length && dots && track) {
 const lightbox = document.getElementById("lightbox");
 const lightboxImg = lightbox?.querySelector("img");
 const lightboxClose = lightbox?.querySelector("button");
-document.querySelectorAll("img").forEach((img) => {
+document.querySelectorAll(".offer-grid img").forEach((img) => {
   img.style.cursor = "zoom-in";
   img.addEventListener("click", () => {
     if (!lightbox || !lightboxImg) return;
