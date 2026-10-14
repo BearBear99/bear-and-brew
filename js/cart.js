@@ -214,8 +214,8 @@ const aboutItems = [
   { title: "Packaging", text: "The red cup, the bag, and the card. Same bear, same colour, easy to take home." },
   { title: "From the kitchen", text: "Sandwich, waffle, gelato, and croissant. Made for a slow morning." },
   { title: "Butter Croissant", text: "Flaky, buttery, and baked each morning. Best with a flat white." },
-  { title: "Chocolate Croissant", text: "Dark chocolate folded into the same pastry. A little richer." },
-  { title: "Takeaway Cup", text: "The red cup with the bear. Same coffee, easy to carry out." },
+  { title: "The sign", text: "The bear on the wall. Same mark you see on the cup and the bag." },
+  { title: "Takeaway Cup", text: "The red cup with the sleeve. Same coffee, easy to carry out." },
   { title: "Latte", text: "Smooth milk and Di Pacci beans. The cup most people order." }
 ];
 const aboutTrack = document.querySelector("#about-carousel .about-track");
@@ -223,12 +223,19 @@ const aboutInfo = document.getElementById("about-info");
 if (aboutTrack && aboutInfo) {
   let aboutIndex = 0;
   const aboutSlides = aboutTrack.children.length;
+  const dots = document.getElementById("about-dots");
+  if (dots) {
+    dots.innerHTML = Array.from({length: aboutSlides}, (_, i) => `<button type="button" data-i="${i}"></button>`).join("");
+  }
   function showAbout(i) {
     aboutIndex = (i + aboutSlides) % aboutSlides;
     aboutTrack.style.transform = `translateX(-${aboutIndex * 100}%)`;
     aboutInfo.innerHTML = `<h2>${aboutItems[aboutIndex].title}</h2><p>${aboutItems[aboutIndex].text}</p><a class="btn btn-cream" href="shop.html">Explore our beans</a>`;
+    if (dots) dots.querySelectorAll("button").forEach((b, n) => b.classList.toggle("on", n === aboutIndex));
   }
   document.querySelector(".about-nav.prev").addEventListener("click", () => showAbout(aboutIndex - 1));
   document.querySelector(".about-nav.next").addEventListener("click", () => showAbout(aboutIndex + 1));
+  if (dots) dots.addEventListener("click", e => { const i = e.target.dataset.i; if (i != null) showAbout(+i); });
+  showAbout(0);
   setInterval(() => showAbout(aboutIndex + 1), 4500);
 }

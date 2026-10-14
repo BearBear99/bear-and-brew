@@ -290,23 +290,13 @@ button, input, textarea, select { font: inherit; }
 .about-split {
   display: grid;
   grid-template-columns: 2fr 1fr;
-  min-height: 440px;
+  min-height: 560px;
   background: #F7F1E8;
-  border-radius: 0 0 24px 24px;
   overflow: hidden;
 }
 .about-carousel { position: relative; overflow: hidden; }
-.about-track {
-  display: flex;
-  height: 100%;
-  transition: transform 0.55s ease;
-}
-.about-track img {
-  width: 100%;
-  height: 440px;
-  object-fit: cover;
-  flex: 0 0 100%;
-}
+.about-track { display: flex; height: 100%; transition: transform 0.55s ease; }
+.about-track img { width: 100%; height: 560px; object-fit: cover; flex: 0 0 100%; }
 .about-nav {
   position: absolute; top: 50%; transform: translateY(-50%);
   z-index: 2; width: 40px; height: 40px; border-radius: 50%;
@@ -315,20 +305,23 @@ button, input, textarea, select { font: inherit; }
 }
 .about-nav.prev { left: 12px; }
 .about-nav.next { right: 12px; }
+.about-dots {
+  position: absolute; bottom: 14px; left: 0; right: 0;
+  display: flex; justify-content: center; gap: 8px; z-index: 2;
+}
+.about-dots button {
+  width: 8px; height: 8px; border-radius: 50%; border: 0;
+  background: rgba(255,253,242,0.6); cursor: pointer; padding: 0;
+}
+.about-dots button.on { background: #FFFDF2; }
 .about-info {
   padding: 48px 36px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background: #A9170B;
-  color: #FFFDF2;
+  display: flex; flex-direction: column; justify-content: center;
+  background: #A9170B; color: #FFFDF2;
 }
 .about-info h2 {
-  margin: 0 0 12px;
-  font-family: "Playfair Display", serif;
-  font-size: 28px;
-  color: #FFFDF2;
-  letter-spacing: 0.02em;
+  margin: 0 0 12px; font-family: "Playfair Display", serif;
+  font-size: 28px; color: #FFFDF2; letter-spacing: 0.02em;
 }
 .about-info p { margin: 0 0 20px; line-height: 1.6; color: #FFFDF2; font-size: 15px; }
 .about-info .btn-cream {
@@ -336,8 +329,9 @@ button, input, textarea, select { font: inherit; }
   background: #FFFDF2; color: #A9170B; text-decoration: none;
   padding: 11px 20px; border-radius: 999px; font-weight: 600; font-size: 14px;
 }
+.about-title { color: #A9170B !important; }
 @media (max-width: 800px) {
-  .about-split { grid-template-columns: 1fr; border-radius: 0; }
-  .about-track img { height: 280px; }
+  .about-split { grid-template-columns: 1fr; min-height: 0; }
+  .about-track img { height: 320px; }
   .about-info { padding: 28px 22px; }
 }
