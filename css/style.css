@@ -287,51 +287,70 @@ button, input, textarea, select { font: inherit; }
   background: white; color: var(--ink); font-size: 24px; cursor: pointer;
 }
 
-.about-split {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  min-height: 560px;
-  background: #F7F1E8;
+.about-stage {
+  background: #A9170B;
+  border-radius: 28px;
+  margin: 24px 6vw;
+  padding: 28px 20px 32px;
+  text-align: center;
+  color: #FFFDF2;
+  position: relative;
+}
+.stage-title {
+  margin: 0 0 18px;
+  font-family: "Playfair Display", serif;
+  font-size: 32px;
+  color: #FFFDF2;
+}
+.stage-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 320px;
+}
+.stage-track {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  transition: transform 0.28s ease;
+}
+.stage-card {
+  width: 220px;
+  height: 260px;
+  border-radius: 16px;
   overflow: hidden;
+  opacity: 0.75;
+  transform: scale(0.86);
+  transition: transform 0.28s ease, opacity 0.28s ease;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.18);
 }
-.about-carousel { position: relative; overflow: hidden; }
-.about-track { display: flex; height: 100%; transition: transform 0.55s ease; }
-.about-track img { width: 100%; height: 560px; object-fit: cover; flex: 0 0 100%; }
-.about-nav {
+.stage-card.center {
+  width: 300px;
+  height: 320px;
+  opacity: 1;
+  transform: scale(1);
+}
+.stage-card img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.about-stage .about-nav {
   position: absolute; top: 50%; transform: translateY(-50%);
-  z-index: 2; width: 40px; height: 40px; border-radius: 50%;
-  border: 0; background: rgba(255,253,242,0.9); color: #A9170B;
-  font-size: 22px; cursor: pointer; line-height: 1;
+  z-index: 2; width: 42px; height: 42px; border-radius: 50%;
+  border: 0; background: #FFFDF2; color: #A9170B;
+  font-size: 22px; cursor: pointer;
 }
-.about-nav.prev { left: 12px; }
-.about-nav.next { right: 12px; }
-.about-dots {
-  position: absolute; bottom: 14px; left: 0; right: 0;
-  display: flex; justify-content: center; gap: 8px; z-index: 2;
-}
-.about-dots button {
+.about-stage .about-nav.prev { left: 8px; }
+.about-stage .about-nav.next { right: 8px; }
+.about-stage .about-dots { margin-top: 16px; display: flex; justify-content: center; gap: 8px; }
+.about-stage .about-dots button {
   width: 8px; height: 8px; border-radius: 50%; border: 0;
-  background: rgba(255,253,242,0.6); cursor: pointer; padding: 0;
+  background: rgba(255,253,242,0.5); cursor: pointer; padding: 0;
 }
-.about-dots button.on { background: #FFFDF2; }
-.about-info {
-  padding: 48px 36px;
-  display: flex; flex-direction: column; justify-content: center;
-  background: #A9170B; color: #FFFDF2;
-}
-.about-info h2 {
-  margin: 0 0 12px; font-family: "Playfair Display", serif;
-  font-size: 28px; color: #FFFDF2; letter-spacing: 0.02em;
-}
-.about-info p { margin: 0 0 20px; line-height: 1.6; color: #FFFDF2; font-size: 15px; }
-.about-info .btn-cream {
-  display: inline-block; width: fit-content;
-  background: #FFFDF2; color: #A9170B; text-decoration: none;
-  padding: 11px 20px; border-radius: 999px; font-weight: 600; font-size: 14px;
-}
-.about-title { color: #A9170B !important; }
+.about-stage .about-dots button.on { background: #FFFDF2; }
+.stage-btn { margin-top: 16px; }
 @media (max-width: 800px) {
-  .about-split { grid-template-columns: 1fr; min-height: 0; }
-  .about-track img { height: 320px; }
-  .about-info { padding: 28px 22px; }
+  .about-stage { margin: 16px 4vw; padding: 20px 12px; }
+  .stage-card { width: 120px; height: 160px; }
+  .stage-card.center { width: 180px; height: 220px; }
+  .stage-title { font-size: 24px; }
 }
