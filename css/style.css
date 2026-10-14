@@ -276,7 +276,7 @@ button, input, textarea, select { font: inherit; }
 @media (max-width: 900px) {
   .nav { gap: 14px; font-size: 12px; letter-spacing: 0.06em; }
   .hero { height: 420px; }
-  .hero-arch { width: 94%; height: 72%; }
+  .hero-arch { width: 110%; height: 58%; top: 42%; border-radius: 0 0 50% 50%; }
   .offer-grid { grid-template-columns: repeat(3, 1fr); }
   .reviews, .bbb, .feedback, .footer-grid, .week, .shop-hero, .shop-layout { grid-template-columns: 1fr; }
   .products { grid-template-columns: repeat(2, 1fr); }
@@ -367,8 +367,9 @@ button, input, textarea, select { font: inherit; }
 }
 @media (max-width: 800px) {
   .about-stage { margin: 16px 4vw; }
+  .stage-wrap { min-height: 280px; }
   .stage-card { width: 100px; height: 140px; }
-  .stage-card.center { width: 240px; height: 200px; }
+  .stage-card.center { width: 240px; height: 280px; }
   .stage-title { font-size: 24px; }
 }
 
