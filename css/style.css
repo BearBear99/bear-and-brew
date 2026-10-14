@@ -288,47 +288,44 @@ button, input, textarea, select { font: inherit; }
 }
 
 .about-stage {
-  background: #A9170B;
-  border-radius: 28px;
+  background: transparent;
   margin: 24px 6vw;
-  padding: 28px 20px 32px;
+  padding: 12px 0 32px;
   text-align: center;
-  color: #FFFDF2;
   position: relative;
 }
 .stage-title {
   margin: 0 0 18px;
   font-family: "Playfair Display", serif;
   font-size: 32px;
-  color: #FFFDF2;
+  color: #A9170B;
 }
 .stage-wrap {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 320px;
+  min-height: 380px;
 }
 .stage-track {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 16px;
-  transition: transform 0.28s ease;
 }
 .stage-card {
-  width: 220px;
+  width: 200px;
   height: 260px;
   border-radius: 16px;
   overflow: hidden;
-  opacity: 0.75;
-  transform: scale(0.86);
+  opacity: 0.8;
+  transform: scale(0.9);
   transition: transform 0.28s ease, opacity 0.28s ease;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
 }
 .stage-card.center {
-  width: 300px;
-  height: 320px;
+  width: 600px;
+  height: 360px;
   opacity: 1;
   transform: scale(1);
 }
@@ -336,7 +333,7 @@ button, input, textarea, select { font: inherit; }
 .about-stage .about-nav {
   position: absolute; top: 50%; transform: translateY(-50%);
   z-index: 2; width: 42px; height: 42px; border-radius: 50%;
-  border: 0; background: #FFFDF2; color: #A9170B;
+  border: 0; background: #A9170B; color: #FFFDF2;
   font-size: 22px; cursor: pointer;
 }
 .about-stage .about-nav.prev { left: 8px; }
@@ -344,13 +341,22 @@ button, input, textarea, select { font: inherit; }
 .about-stage .about-dots { margin-top: 16px; display: flex; justify-content: center; gap: 8px; }
 .about-stage .about-dots button {
   width: 8px; height: 8px; border-radius: 50%; border: 0;
-  background: rgba(255,253,242,0.5); cursor: pointer; padding: 0;
+  background: #E7C9C4; cursor: pointer; padding: 0;
 }
-.about-stage .about-dots button.on { background: #FFFDF2; }
-.stage-btn { margin-top: 16px; }
+.about-stage .about-dots button.on { background: #A9170B; }
+.stage-btn {
+  margin-top: 16px;
+  background: #A9170B;
+  color: #FFFDF2;
+  border-radius: 999px;
+  padding: 11px 20px;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+}
 @media (max-width: 800px) {
-  .about-stage { margin: 16px 4vw; padding: 20px 12px; }
-  .stage-card { width: 120px; height: 160px; }
-  .stage-card.center { width: 180px; height: 220px; }
+  .about-stage { margin: 16px 4vw; }
+  .stage-card { width: 100px; height: 140px; }
+  .stage-card.center { width: 240px; height: 200px; }
   .stage-title { font-size: 24px; }
 }
