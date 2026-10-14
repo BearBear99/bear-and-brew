@@ -276,7 +276,7 @@ button, input, textarea, select { font: inherit; }
 @media (max-width: 900px) {
   .nav { gap: 14px; font-size: 12px; letter-spacing: 0.06em; }
   .hero { height: 420px; }
-  .hero-arch { width: 120%; height: 62%; bottom: -6%; top: auto; border-radius: 50% 50% 0 0 / 100% 100% 0 0; }
+  .hero-arch { width: 120%; height: 58%; bottom: 8%; top: auto; border-radius: 50% 50% 0 0 / 100% 100% 0 0; }
   .offer-grid { grid-template-columns: repeat(3, 1fr); }
   .reviews, .bbb, .feedback, .footer-grid, .week, .shop-hero, .shop-layout { grid-template-columns: 1fr; }
   .products { grid-template-columns: repeat(2, 1fr); }
