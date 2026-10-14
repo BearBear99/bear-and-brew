@@ -276,21 +276,21 @@ button, input, textarea, select { font: inherit; }
 @media (max-width: 900px) {
   .nav { gap: 14px; font-size: 12px; letter-spacing: 0.06em; }
   .hero { height: 420px; }
-  .hero-arch { width: 110%; height: 58%; top: 42%; border-radius: 0 0 50% 50%; }
+  .hero-arch { width: 120%; height: 62%; bottom: -6%; top: auto; border-radius: 50% 50% 0 0 / 100% 100% 0 0; }
   .offer-grid { grid-template-columns: repeat(3, 1fr); }
   .reviews, .bbb, .feedback, .footer-grid, .week, .shop-hero, .shop-layout { grid-template-columns: 1fr; }
   .products { grid-template-columns: repeat(2, 1fr); }
   .shop-hero img { height: 200px; }
   .beans-banner {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto;
+    grid-template-columns: 0.9fr 1.2fr 0.9fr;
     min-height: 0;
-    padding: 16px 12px;
+    padding: 12px 8px;
+    gap: 4px;
   }
-  .beans-banner .banner-copy { grid-column: 1 / -1; order: -1; }
-  .beans-banner .banner-copy h2 { font-size: 18px; margin-bottom: 10px; }
-  .beans-banner .banner-copy a { border-radius: 20px; padding: 8px 14px; }
-  .banner-left, .banner-right { height: 120px; object-position: center; align-self: center; }
+  .beans-banner .banner-copy { grid-column: auto; order: 0; }
+  .beans-banner .banner-copy h2 { font-size: 14px; margin-bottom: 8px; line-height: 1.1; }
+  .beans-banner .banner-copy a { border-radius: 20px; padding: 6px 10px; font-size: 11px; }
+  .banner-left, .banner-right { height: 90px; object-position: center; align-self: center; }
 }
 
 .lightbox {
