@@ -209,3 +209,24 @@ function closeLightbox() {
 }
 lightboxClose?.addEventListener("click", (e) => { e.stopPropagation(); closeLightbox(); });
 lightbox?.addEventListener("click", closeLightbox);
+
+const aboutItems = [
+  { title: "Inside the shop", text: "Cream walls, red seats, and the bear on the wall. This is the room we wanted from the start." },
+  { title: "Butter Croissant", text: "Flaky, buttery, and baked each morning. Best with a flat white." },
+  { title: "Chocolate Croissant", text: "Dark chocolate folded into the same pastry. A little richer." },
+  { title: "Berry Tart", text: "Shortcrust, cream, and fresh berries. Light enough for the afternoon." },
+  { title: "Takeaway Cup", text: "The red cup with the bear. Same coffee, easy to carry out." },
+  { title: "Latte", text: "Smooth milk and Di Pacci beans. The cup most people order." }
+];
+const aboutTrack = document.querySelector("#about-carousel .about-track");
+const aboutInfo = document.getElementById("about-info");
+if (aboutTrack && aboutInfo) {
+  let aboutIndex = 0;
+  const aboutSlides = aboutTrack.children.length;
+  function showAbout(i) {
+    aboutIndex = i % aboutSlides;
+    aboutTrack.style.transform = `translateX(-${aboutIndex * 100}%)`;
+    aboutInfo.innerHTML = `<h2>${aboutItems[aboutIndex].title}</h2><p>${aboutItems[aboutIndex].text}</p>`;
+  }
+  setInterval(() => showAbout(aboutIndex + 1), 4500);
+}
