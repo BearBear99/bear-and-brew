@@ -204,6 +204,12 @@ document.querySelectorAll(".offer-grid img").forEach((img) => {
     lightbox.classList.add("open");
   });
 });
+function openLightbox(src, alt) {
+  if (!lightbox || !lightboxImg) return;
+  lightboxImg.src = src;
+  lightboxImg.alt = alt || "";
+  lightbox.classList.add("open");
+}
 function closeLightbox() {
   lightbox?.classList.remove("open");
 }
@@ -224,34 +230,46 @@ const stageDots = document.getElementById("about-dots");
 if (stageTrack) {
   let stageIndex = 0;
   const n = stageItems.length;
-  function build() {
+  let busy = false;
+
+  function card(i, center) {
+    const item = stageItems[(i + n) % n];
+    const el = document.createElement("div");
+    el.className = "stage-card" + (center ? " center" : "");
+    el.innerHTML = `<img src="${item.src}" alt="${item.title}">`;
+    el.querySelector("img").addEventListener("click", () => openLightbox(item.src, item.title));
+    return el;
+  }
+  function render(animate) {
+    const prev = (stageIndex - 1 + n) % n;
+    const next = (stageIndex + 1) % n;
+    stageTrack.style.transition = animate ? "transform 0.55s ease" : "none";
     stageTrack.innerHTML = "";
-    for (let offset = -1; offset <= 1; offset++) {
-      const i = (stageIndex + offset + n) % n;
-      const el = document.createElement("div");
-      el.className = "stage-card" + (offset === 0 ? " center" : "");
-      el.innerHTML = `<img src="${stageItems[i].src}" alt="${stageItems[i].title}">`;
-      stageTrack.appendChild(el);
-    }
+    stageTrack.append(card(prev, false), card(stageIndex, true), card(next, false));
     stageTitle.textContent = stageItems[stageIndex].title;
     if (stageDots) {
       stageDots.innerHTML = stageItems.map((_, i) => `<button type="button" data-i="${i}" class="${i === stageIndex ? "on" : ""}"></button>`).join("");
     }
   }
   function move(dir) {
-    stageTrack.classList.add(dir > 0 ? "slide-next" : "slide-prev");
+    if (busy) return;
+    busy = true;
+    stageTrack.style.transition = "transform 0.55s ease";
+    stageTrack.style.transform = `translateX(${dir > 0 ? -120 : 120}px)`;
     setTimeout(() => {
       stageIndex = (stageIndex + dir + n) % n;
-      stageTrack.classList.remove("slide-next", "slide-prev");
-      build();
-    }, 280);
+      stageTrack.style.transition = "none";
+      stageTrack.style.transform = "translateX(0)";
+      render(false);
+      busy = false;
+    }, 550);
   }
   document.querySelector(".about-nav.prev").addEventListener("click", () => move(-1));
   document.querySelector(".about-nav.next").addEventListener("click", () => move(1));
   if (stageDots) stageDots.addEventListener("click", e => {
     const i = e.target.dataset.i;
-    if (i != null) { stageIndex = +i; build(); }
+    if (i != null && !busy) { stageIndex = +i; render(false); }
   });
-  build();
-  setInterval(() => move(1), 4500);
+  render(false);
+  setInterval(() => move(1), 5000);
 }

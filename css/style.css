@@ -312,7 +312,9 @@ button, input, textarea, select { font: inherit; }
   align-items: center;
   justify-content: center;
   gap: 16px;
+  will-change: transform;
 }
+.stage-card { cursor: pointer; }
 .stage-card {
   width: 200px;
   height: 260px;
