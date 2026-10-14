@@ -224,9 +224,11 @@ if (aboutTrack && aboutInfo) {
   let aboutIndex = 0;
   const aboutSlides = aboutTrack.children.length;
   function showAbout(i) {
-    aboutIndex = i % aboutSlides;
+    aboutIndex = (i + aboutSlides) % aboutSlides;
     aboutTrack.style.transform = `translateX(-${aboutIndex * 100}%)`;
     aboutInfo.innerHTML = `<h2>${aboutItems[aboutIndex].title}</h2><p>${aboutItems[aboutIndex].text}</p><a class="btn btn-cream" href="shop.html">Explore our beans</a>`;
   }
+  document.querySelector(".about-nav.prev").addEventListener("click", () => showAbout(aboutIndex - 1));
+  document.querySelector(".about-nav.next").addEventListener("click", () => showAbout(aboutIndex + 1));
   setInterval(() => showAbout(aboutIndex + 1), 4500);
 }
