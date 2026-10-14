@@ -403,3 +403,8 @@ body > header, body > section, body > footer { position: relative; z-index: 1; }
   .cats { flex-direction: row; flex-wrap: wrap; gap: 8px; }
   .cats button { flex: 1; min-width: 90px; text-align: center; }
 }
+.banner-copy a .short { display: none; }
+@media (max-width: 900px) {
+  .banner-copy a .full { display: none; }
+  .banner-copy a .short { display: inline; }
+}
