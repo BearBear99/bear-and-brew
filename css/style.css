@@ -201,18 +201,23 @@ button, input, textarea, select { font: inherit; }
 .bbb h3 { margin: 4px 0; color: var(--red); }
 .bbb p { color: var(--muted); font-size: 14px; }
 .week {
-  display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 28px;
-  align-items: center; margin: 28px auto; max-width: 900px;
+  display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 20px;
+  align-items: center; margin: 28px auto; max-width: 960px;
 }
 .week-box {
   background: var(--red); color: white; border-radius: 18px; padding: 22px 26px;
 }
 .week-box h2 { font-family: "Playfair Display", serif; margin: 6px 0 8px; font-size: 24px; }
-.week-offer { text-align: center; color: var(--ink); }
-.week-offer img { width: 150px; margin: 0 auto 8px; display: block; }
-.week-offer h3 { margin: 4px 0; color: var(--red); }
-.week-offer .price { font-size: 22px; margin: 4px 0 0; }
-.week-offer .was { opacity: 0.7; text-decoration: line-through; font-size: 14px; }
+.week-pic { text-align: center; }
+.week-pic img { width: 160px; margin: 0 auto; display: block; }
+.week-meta { text-align: left; color: var(--ink); }
+.week-meta h3 { margin: 4px 0; color: var(--red); }
+.week-meta .price { font-size: 22px; margin: 4px 0 0; }
+.week-meta .was { opacity: 0.7; text-decoration: line-through; font-size: 14px; }
+@media (max-width: 800px) {
+  .week { grid-template-columns: 1fr; text-align: center; }
+  .week-meta { text-align: center; }
+}
 
 .shop-hero {
   display: grid; grid-template-columns: 1fr 1fr; min-height: 320px;
